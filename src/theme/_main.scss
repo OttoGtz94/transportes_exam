@@ -1,0 +1,31 @@
+.main {
+	//background-color: green;
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	@import './_formMaps';
+	@import './_camiones';
+	.btnCotizar {
+		width: 100%;
+		padding: 15px;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		button {
+			width: 300px;
+			height: 25px;
+			border: 1px solid transparent;
+			border-radius: 5px;
+			font-size: 15px;
+			text-transform: uppercase;
+			font-weight: 600;
+			background-color: rgb(231, 133, 21);
+			cursor: pointer;
+			transition: 1s ease;
+			&:hover {
+				background-color: rgb(21, 204, 76);
+			}
+		}
+	}
+}

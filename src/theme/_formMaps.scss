@@ -1,0 +1,23 @@
+.formMaps {
+	//background-color: blue;
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	padding: 15px;
+	.map {
+		width: 40%;
+		p {
+			color: #fff;
+			font-size: 17px;
+		}
+	}
+	input {
+		width: 100%;
+		margin: 15px 0px;
+		height: 25px;
+		border: 1px solid transparent;
+		border-radius: 5px;
+		padding: 5px 10px 5px 15px;
+	}
+}
