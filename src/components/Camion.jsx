@@ -1,9 +1,9 @@
 import React, { useContext, useState } from 'react';
 import CamionContext from '../hooks/camionContext';
 
-const Camion = ({ camion }) => {
+const Camion = ({ camion, setIdCamion, idCamion }) => {
 	const camionContext = useContext(CamionContext);
-	const { fnGetTruck } = camionContext;
+	const { fnGetTruck, fnClearTruck } = camionContext;
 
 	const { nombre, descripcion, _created_date } = camion;
 
@@ -11,14 +11,21 @@ const Camion = ({ camion }) => {
 		useState(false);
 
 	const onClick = () => {
-		fnGetTruck(camion);
-		setCamionSeleccionado(true);
+		if (idCamion === camion._id) {
+			fnClearTruck();
+			setIdCamion('');
+			setCamionSeleccionado(false);
+		} else {
+			setIdCamion(camion._id);
+			fnGetTruck(camion);
+			setCamionSeleccionado(true);
+		}
 	};
 	return (
 		<div
 			onClick={onClick}
 			className={
-				camionSeleccionado
+				camionSeleccionado && idCamion === camion._id
 					? 'camion camionSeleccionado'
 					: 'camion'
 			}>

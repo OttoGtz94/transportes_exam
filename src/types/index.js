@@ -1,4 +1,5 @@
 export const GET_TRUCKS = 'GET_TRUCKS';
 export const GET_TRUCK = 'GET_TRUCK';
+export const CLEAR_TRUCK = 'CLEAR_TRUCK';
 export const CHANGE_COOR_ORIGEN = 'CHANGE_COOR_ORIGEN';
 export const CHANGE_COOR_DESTINO = 'CHANGE_COOR_DESTINO';

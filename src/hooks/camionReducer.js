@@ -3,6 +3,7 @@ import {
 	GET_TRUCK,
 	CHANGE_COOR_ORIGEN,
 	CHANGE_COOR_DESTINO,
+	CLEAR_TRUCK,
 } from '../types';
 
 //eslint-disable-next-line
@@ -17,6 +18,11 @@ export default (state, action) => {
 			return {
 				...state,
 				camionSelecto: action.payload,
+			};
+		case CLEAR_TRUCK:
+			return {
+				...state,
+				camionSelecto: {},
 			};
 		case CHANGE_COOR_ORIGEN:
 			return {

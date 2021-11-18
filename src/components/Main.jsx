@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import CamionContext from '../hooks/camionContext';
 import Camion from './Camion';
 import Autocomplete from './Autocomplete';
@@ -16,10 +16,12 @@ const Main = () => {
 		fnCotizar,
 	} = camionContext;
 
+	const [idCamion, setIdCamion] = useState('');
+
 	useEffect(() => {
 		fnGetTrucks();
 		//eslint-disable-next-line
-	}, []);
+	}, [idCamion]);
 	const onChangueOrigin = coor => {
 		fnChangeCoorOrigin(coor);
 	};
@@ -27,6 +29,7 @@ const Main = () => {
 	const onChangeDestiny = coor => {
 		fnChangeCoorDestiny(coor);
 	};
+
 	return (
 		<div className='main'>
 			{/* <input type='text' placeholder='Direccion' /> */}
@@ -50,7 +53,12 @@ const Main = () => {
 			</div>
 			<div className='camiones'>
 				{camiones.map(camion => (
-					<Camion key={camion._id} camion={camion} />
+					<Camion
+						key={camion._id}
+						camion={camion}
+						setIdCamion={setIdCamion}
+						idCamion={idCamion}
+					/>
 				))}
 			</div>
 			<div className='btnCotizar'>

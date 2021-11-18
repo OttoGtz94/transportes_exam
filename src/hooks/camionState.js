@@ -7,6 +7,7 @@ import {
 	CHANGE_COOR_ORIGEN,
 	CHANGE_COOR_DESTINO,
 	GET_TRUCK,
+	CLEAR_TRUCK,
 } from '../types';
 
 const CamionState = props => {
@@ -49,6 +50,12 @@ const CamionState = props => {
 		});
 	};
 
+	const fnClearTruck = () => {
+		dispatch({
+			type: CLEAR_TRUCK,
+		});
+	};
+
 	const fnChangeCoorOrigin = newCoor => {
 		dispatch({
 			type: CHANGE_COOR_ORIGEN,
@@ -80,10 +87,9 @@ const CamionState = props => {
 				camionSelecto: state.camionSelecto,
 				coordenadasOrigen: state.coordenadasOrigen,
 				coordenadasDestino: state.coordenadasDestino,
-				/* lat: state.lat,
-				lng: state.lng, */
 				fnGetTrucks,
 				fnGetTruck,
+				fnClearTruck,
 				fnChangeCoorOrigin,
 				fnChangeCoorDestiny,
 				fnCotizar,
